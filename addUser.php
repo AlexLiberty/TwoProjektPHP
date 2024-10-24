@@ -28,6 +28,8 @@ if (isset($_POST['login'], $_POST['password'], $_POST['email']))  {
     $login = $_POST['login'];
     $password = $_POST['password'];
     $email = $_POST['email'];
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     function addUser($userData) {
         $userFile = 'users.txt';
         file_put_contents($userFile, $userData . PHP_EOL, FILE_APPEND);
@@ -51,7 +53,7 @@ if (isset($_POST['login'], $_POST['password'], $_POST['email']))  {
     }
     else
     {
-        $userData = "$login:$password:$email";
+        $userData = "$login:$hashedPassword:$email";
         addUser($userData);
         echo "<p style='color: green;'>Користувача успішно додано</p>";
     }

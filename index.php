@@ -9,7 +9,8 @@
 <body>
 <h1>Меню</h1>
     <a class="button" href="addUser.php">Додати користувача</a><br>
-    <a class="button" href="showUsers.php">Переглянути</a>
+    <a class="button" href="login.php">Авторизація</a><br>
+    <a class="button" href="showUsers.php">Переглянути</a><br>
 
 <?php
 $userFile = 'users.txt';
